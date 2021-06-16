@@ -42,7 +42,7 @@ usage: logg.py
 ```
 
 -----
-bit of logs
+## bit of logs
 
 ```log
 06-15-21 21:33   0xdhrv         INFO     --- New Log ---
