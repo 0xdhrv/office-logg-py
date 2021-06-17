@@ -8,6 +8,8 @@
 
 **logg** is a simple logger written in python, as a console application, that is completely off the grid, and also saves your office log timings with various information in time.log
 
+you can see time left and time elapsed anytime, to take good quality breaks without any worries
+
 -----
 ## bit of code
 
@@ -17,17 +19,17 @@
 logger = logging.getLogger('0xdhrv')
 logger.info('--- New Log ---')
 ...
-# Your Overall Time in **Seconds**
-timeLeft = 30600
+# Your Overall Time in **Minutes**
+timeLeft = 510
 ...
 
 ```
 
-change `timeLeft` (**in seconds**) according to your office timing needs,
+change `timeLeft` (**in minutes**) according to your office timing needs,
 
 when you get to your office just . :
 
-```bash
+
 $ python logg.py
 description: a simple logger written in python, as a console 
     application, that is completely off the grid
@@ -36,6 +38,8 @@ usage: logg.py
     options:
       i, to trigger in event, and enter in time
       o, to trigger out event, and enter out time
+      t, to see time elapsed
+      l, to see time left
       s, to send message, to log message
       q, to quit application
       h, to display this help message
@@ -48,7 +52,7 @@ usage: logg.py
 06-15-21 21:33   0xdhrv         INFO     --- New Log ---
 06-15-21 21:33   0xdhrv         INFO     IN  Reached Office
 06-15-21 21:33   0xdhrv         INFO     OUT Coffee Break
-06-15-21 21:33   0xdhrv         INFO     + 0.17 Mn
+06-15-21 21:33   0xdhrv         INFO     + 0.17 min(s)
 06-15-21 21:33   0xdhrv         INFO     IN  Back
 06-15-21 21:34   0xdhrv         INFO     Meeting @1400, 15/06/2021
 ```

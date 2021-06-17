@@ -10,6 +10,8 @@ usage: logg.py
     options:
       i, to trigger in event, and enter in time
       o, to trigger out event, and enter out time
+      t, to see time elapsed
+      l, to see time left
       s, to send message, to log message
       q, to quit application
       h, to display this help message
@@ -36,9 +38,13 @@ while(True):
   elif(choice.lower() == 's'):
     message = input('| Ms : ')
     l.snd(message)
+  elif(choice.lower() == 't'):
+    l.tot()
+  elif(choice.lower() == 'l'):
+    l.lef()
   elif(choice.lower() == 'h'):
     print(helpMessage)
-  elif(choice.lower() == 'q' or 'e'):
+  elif(choice.lower() == 'q'):
     print('+ Quit')
     break  
   else:
