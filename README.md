@@ -29,7 +29,7 @@ change `timeLeft` (**in minutes**) according to your office timing needs,
 
 when you get to your office just . :
 
-
+```bash
 $ python logg.py
 description: a simple logger written in python, as a console 
     application, that is completely off the grid
