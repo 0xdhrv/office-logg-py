@@ -30,13 +30,14 @@ print('|')
 
 while(True):
   if(choice.lower() == 'i'):
-    message = input('| In : ')
-    l.inn(message)
+    # message = input('| In : ')
+    l.inn()
   elif(choice.lower() == 'o'):
-    message = input('| Ot : ')
-    l.out(message)
+    # message = input('| Ot : ')
+    l.out()
   elif(choice.lower() == 's'):
     message = input('| Ms : ')
+    print('|')
     l.snd(message)
   elif(choice.lower() == 't'):
     l.tot()
@@ -49,7 +50,7 @@ while(True):
     break  
   else:
     print('| Error')
-  print('|')
+  # print('|')
   choice = input('| ')
   print('|')
   

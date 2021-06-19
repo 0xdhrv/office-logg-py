@@ -5,7 +5,7 @@ logging.basicConfig(
     format='%(asctime)-16s %(name)-14s %(levelname)-8s %(message)s',
     datefmt='%m-%d-%y %H:%M',
     filename='time.log',
-    filemode='w',
+    filemode='a',
 )
 
 import logging
@@ -30,36 +30,39 @@ def tot():
     else:
         now = time.perf_counter()
         print('|- {:.2f}'.format(((now-startInTime)+totalInTime)/60))
+        print('|')
 
 def lef():
     if(amOut==True):
-        print('|- {:.2f}'.format(timeLeft-(totalInTime/60)))
+        print('|- {:.2f}'.format((timeLeft-totalInTime)/60))
+        print('|')
     else:
         now = time.perf_counter()
-        print('|- {:.2f}'.format((timeLeft/60)-(((now-startInTime)+totalInTime)/60)))
+        print('|- {:.2f}'.format((timeLeft-(now-startInTime+totalInTime))/60))
+        print('|')
 
-def inn(message):
+def inn():
     global amOut, startInTime, stopInTime, totalInTime, timeLeft
     if amOut == True:
         amOut = False
         startInTime = time.perf_counter() 
-        print('|- Left {:.2f} Mn'.format((timeLeft-totalInTime)/60))
+        print('|- Left {:.2f} min(s)'.format((timeLeft-totalInTime)/60))
         print('|') 
-        logger.info('IN  %s', message)
+        logger.info('IN')
     else:
         print('! ERR: Already In')
 
 
-def out(message):
+def out():
     global amOut, startInTime, stopInTime, totalInTime, timeLeft
     if amOut == False:
         amOut = True
         stopInTime = time.perf_counter()
         timeDiff = stopInTime - startInTime
         totalInTime += timeDiff
-        print('|- In For {:.2f} Mn'.format(timeDiff/60))
+        print('|- In For {:.2f} min(s)'.format(timeDiff/60))
         print('|')
-        logger.info('OUT %s', message)
+        logger.info('OUT')
         logger.info('+ {:.2f} min(s)'.format(timeDiff/60))
     else:
         print('! ERR: Already Out')
